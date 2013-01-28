@@ -1,0 +1,20 @@
+
+  <h1>Variant</h1>
+  <%if @variant.nil? %>
+    <h3>Variant</h3>
+    <%else%>
+      <p>
+        <%= link_to 'Edit', edit_product_variant_path(@variant.product_id,@variant.id) %>
+      </p>
+      <p>
+        <span>Name: <%= @variant.name %></span>
+      </p>
+
+      <p>
+        <span>Value: <%= @variant.value %></span>
+      </p>
+
+  <%end%>
+  <%= link_to "Back", :back%>
+
+

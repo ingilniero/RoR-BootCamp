@@ -1,0 +1,15 @@
+<h1>Variants</h1>
+<p>
+  <%= link_to 'New variant', new_product_variant_path%>
+</p>
+<span> <%= flash[:notice]%></span>
+<ul>
+  <% @variants.each do |variant| %>
+  <li id='<%="variant_#{variant.id}"%>'>
+    <%= variant.name %>: <%= variant.value %>
+    | <%= link_to 'Show', product_variant_path(@product, variant.id) %>
+    | <%= link_to 'Delete', product_variant_path(@product, variant.id), :method => :delete %>
+  </li>
+  <% end %>
+</ul>
+

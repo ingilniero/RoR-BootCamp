@@ -1,0 +1,17 @@
+<h1>Products List</h1>
+<p>
+  <%= link_to 'New product', new_product_path %>
+</p>
+<span> <%= flash[:notice]%></span>
+<ul>
+  <% @products.each do |product| %>
+  <li id='<%="product_#{product.id}"%>'>
+    <%= product.name %> | <%= link_to 'Show', product %> | <%= link_to 'delete', product , :method => :delete %>
+  </li>
+  <% end %>
+</ul>
+
+
+
+
+

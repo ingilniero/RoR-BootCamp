@@ -1,0 +1,18 @@
+
+
+  <%= form_for variant, :url => {:action => :create} do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <span class="error"><%= variant.errors[:name].join(',') %></span>
+    <br />
+
+    <%= f.label :value %>
+    <%= f.text_field :value %>
+    <span class="error"><%= variant.errors[:value].join(',') %></span>
+    <br />
+
+    <br/>
+    <%= f.submit 'Save' %>
+
+  <% end %>

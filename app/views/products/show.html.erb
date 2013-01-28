@@ -1,0 +1,25 @@
+
+  <h1>Product</h1>
+  <%if @product.nil? %>
+    <h3>Product not found</h3>
+    <%else%>
+      <p>
+        <%= link_to 'Edit', edit_product_path(@product) %> | <%= link_to 'Variants', product_variants_path(@product.id)%>
+      </p>
+      <p>
+        <span>Name: <%= @product.name %></span>
+      </p>
+      <p>
+        <span>Category: <%= @product.try(:category).try(:name) %></span>
+      </p>
+      <p>
+        <span>Description: <%= @product.description %></span>
+      </p>
+      <p>
+        <span>Price: <%= @product.price %></span>
+      </p>
+
+  <%end%>
+  <%= link_to "Back", :back%>
+
+
